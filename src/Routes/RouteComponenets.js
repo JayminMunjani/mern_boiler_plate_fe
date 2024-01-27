@@ -23,8 +23,7 @@ export const UserAuthRoute = ({ Component }) => {
 
 export const UnAuthRoute = ({ Component }) => {
 	const token = localStorage?.getItem("token");
-	const userData = JSON?.parse(localStorage?.getItem("user"));
-	if (token && userData) {
+	if (token) {
 		return <Navigate to="/home" />;
 	} else {
 		return <Component />;
